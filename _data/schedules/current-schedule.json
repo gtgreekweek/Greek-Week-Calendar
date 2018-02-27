@@ -1,0 +1,11 @@
+{
+    "semester": "Test",
+    "meetings": [
+        {
+            "month": 2,
+            "day": 29,
+            "subject": "Test",
+            "description": "Test"
+        }
+    ]
+}
