@@ -165,6 +165,31 @@ body .bg:nth-child(n+3) {
     transition: background .1s ease;
 }
 
+.event {
+    background-color: #909090;
+    color: #fff;
+}
+
+.water {
+    background-color: #1a69a4;
+    color: #fff;
+}
+
+.outdoor {
+    background-color: #805031;
+    color: #fff;
+}
+
+.deadline {
+    background-color: #b21e1e;
+    color: #fff;
+}
+
+.indoor {
+    background-color: #198f35;
+    color: #fff;
+}
+
 .label span {
     border: 2px solid rgba(0,0,0,0.8);
     border-color: #e85d00;

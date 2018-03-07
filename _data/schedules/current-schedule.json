@@ -16,7 +16,28 @@
             "subject": "Test",
             "description": "Test",
             "tags": [
-                "outdoor"
+                "outdoor",
+                "event"
+            ]
+        },
+        {
+            "month": 2,
+            "day": 28,
+            "subject": "Test",
+            "description": "Test",
+            "tags": [
+                "outdoor",
+                "event"
+            ]
+        },
+        {
+            "month": 2,
+            "day": 28,
+            "subject": "Test",
+            "description": "Test",
+            "tags": [
+                "water",
+                "deadline"
             ]
         },
         {
