@@ -36,7 +36,50 @@
 </nav>
 
 
-  <div class="container">
+  <nav class="navbar second-nav fixed-top">
+    <div class="container">
+        <a class="navbar-brand">
+            Filter Events
+        </a>
+        <div class="nav justify-content-end">
+            <a id            = "expand-icon"
+               data-toggle   = "collapse"
+               href          = "#nav-collapse"
+               aria-expanded = "false"
+               aria-controls = "#nav-collapse">
+                <i class="material-icons">expand_more</i>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="second-nav-collapsible">
+    <div class="collapse" id="nav-collapse">
+        <div class="container">
+			<div id            = "mainAccordion"
+                 data-children = ".item"
+                 class         = "side-nav"
+                 style         = "text-align:center">
+				<button class="button outdoor">
+			        Outdoor
+				</button>
+				<button class="button indoor">
+			        Indoor
+				</button>
+				<button class="button water">
+			        Water
+				</button>
+				<button class="button deadline">
+			        Deadline
+				</button>
+				<button class="button event">
+			        Event
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="container">
     <div class="row">
         <!-- Repeat structure below for second calender -->
         <div class="post-header spacer">
