@@ -91,117 +91,154 @@
 
 <div class="container">
     <div class="row">
-        <!-- Repeat structure below for second calender -->
-        <div class="post-header spacer">
-            <!-- <div class="options nav">
-                <a class="past-cal nav-link">View Past Semesters</a>
-            </div> -->
-            <h1 class="heading">Test</h1>
+        <div class="col-lg-3 side-menu">
+            <div class="side-nav-box">
+                <div id            = "mainAccordion"
+                     data-children = ".item"
+                     class         = "side-nav"
+                     style         = "text-align:center">
+                    <div class="item">
+                        <button class       = "button outdoor"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'outdoor' )">
+                            Outdoor
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button indoor"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'indoor' )">
+                            Indoor
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button water"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'water' )">
+                            Water
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button deadline"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'deadline' )">
+                            Deadline
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button event"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'event' )">
+                            Event
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row schedule-container">
-        <div class="col-lg">
-            <ul class="calender">
-                
-                <li class="meeting">
-                    <div class="row entry">
-                        <div class="cal-card">
-                            <div class="date text-center">
-                                <p>Feb</p>
-                                <h3>29</h3>
-                            </div>
-                            <div class="content">
-                                <h5 class="topic">Test</h5>
-                                <p class="card-text">Test</p>
-                                
-                                    <p class="label indoor">indoor</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="meeting">
-                    <div class="row entry">
-                        <div class="cal-card">
-                            <div class="date text-center">
-                                <p>Feb</p>
-                                <h3>28</h3>
-                            </div>
-                            <div class="content">
-                                <h5 class="topic">Test</h5>
-                                <p class="card-text">Test</p>
-                                
-                                    <p class="label outdoor">outdoor</p>
-                                
-                                    <p class="label event">event</p>
-                                
+        <div class="col-lg-9">
+            <div class="schedule-container">
+                <ul class="calender">
+                    
+                    <li class="meeting">
+                        <div class="row entry">
+                            <div class="cal-card">
+                                <div class="date text-center">
+                                    <p>Feb</p>
+                                    <h3>29</h3>
+                                </div>
+                                <div class="content">
+                                    <h5 class="topic">Test</h5>
+                                    <p class="card-text">Test</p>
+                                    
+                                        <p class="label indoor">indoor</p>
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                
-                <li class="meeting">
-                    <div class="row entry">
-                        <div class="cal-card">
-                            <div class="date text-center">
-                                <p>Feb</p>
-                                <h3>28</h3>
-                            </div>
-                            <div class="content">
-                                <h5 class="topic">Test</h5>
-                                <p class="card-text">Test</p>
-                                
-                                    <p class="label outdoor">outdoor</p>
-                                
-                                    <p class="label event">event</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                
-                <li class="meeting">
-                    <div class="row entry">
-                        <div class="cal-card">
-                            <div class="date text-center">
-                                <p>Feb</p>
-                                <h3>28</h3>
-                            </div>
-                            <div class="content">
-                                <h5 class="topic">Test</h5>
-                                <p class="card-text">Test</p>
-                                
-                                    <p class="label water">water</p>
-                                
-                                    <p class="label deadline">deadline</p>
-                                
+                    </li>
+                    
+                    <li class="meeting">
+                        <div class="row entry">
+                            <div class="cal-card">
+                                <div class="date text-center">
+                                    <p>Feb</p>
+                                    <h3>28</h3>
+                                </div>
+                                <div class="content">
+                                    <h5 class="topic">Test</h5>
+                                    <p class="card-text">Test</p>
+                                    
+                                        <p class="label outdoor">outdoor</p>
+                                    
+                                        <p class="label event">event</p>
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                
-                <li class="meeting">
-                    <div class="row entry">
-                        <div class="cal-card">
-                            <div class="date text-center">
-                                <p>Feb</p>
-                                <h3>27</h3>
-                            </div>
-                            <div class="content">
-                                <h5 class="topic">Test</h5>
-                                <p class="card-text">Test</p>
-                                
-                                    <p class="label indoor">indoor</p>
-                                
-                                    <p class="label outdoor">outdoor</p>
-                                
+                    </li>
+                    
+                    <li class="meeting">
+                        <div class="row entry">
+                            <div class="cal-card">
+                                <div class="date text-center">
+                                    <p>Feb</p>
+                                    <h3>28</h3>
+                                </div>
+                                <div class="content">
+                                    <h5 class="topic">Test</h5>
+                                    <p class="card-text">Test</p>
+                                    
+                                        <p class="label outdoor">outdoor</p>
+                                    
+                                        <p class="label event">event</p>
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                
-            </ul>
+                    </li>
+                    
+                    <li class="meeting">
+                        <div class="row entry">
+                            <div class="cal-card">
+                                <div class="date text-center">
+                                    <p>Feb</p>
+                                    <h3>28</h3>
+                                </div>
+                                <div class="content">
+                                    <h5 class="topic">Test</h5>
+                                    <p class="card-text">Test</p>
+                                    
+                                        <p class="label water">water</p>
+                                    
+                                        <p class="label deadline">deadline</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="meeting">
+                        <div class="row entry">
+                            <div class="cal-card">
+                                <div class="date text-center">
+                                    <p>Feb</p>
+                                    <h3>27</h3>
+                                </div>
+                                <div class="content">
+                                    <h5 class="topic">Test</h5>
+                                    <p class="card-text">Test</p>
+                                    
+                                        <p class="label indoor">indoor</p>
+                                    
+                                        <p class="label outdoor">outdoor</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
     </div>
     <!-- END: Repeat structure -->

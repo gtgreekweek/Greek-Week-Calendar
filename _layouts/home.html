@@ -57,37 +57,74 @@ layout: master
 
 <div class="container">
     <div class="row">
-        <!-- Repeat structure below for second calender -->
-        <div class="post-header spacer">
-            <!-- <div class="options nav">
-                <a class="past-cal nav-link">View Past Semesters</a>
-            </div> -->
-            <h1 class="heading">{{ site.data.schedules.current-schedule.semester }}</h1>
+        <div class="col-lg-3 side-menu">
+            <div class="side-nav-box">
+                <div id            = "mainAccordion"
+                     data-children = ".item"
+                     class         = "side-nav"
+                     style         = "text-align:center">
+                    <div class="item">
+                        <button class       = "button outdoor"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'outdoor' )">
+                            Outdoor
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button indoor"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'indoor' )">
+                            Indoor
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button water"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'water' )">
+                            Water
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button deadline"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'deadline' )">
+                            Deadline
+                        </button>
+                    </div>
+                    <div class="item">
+                        <button class       = "button event"
+                                data-hidden = "false"
+                                onClick     = "filter_events( 'event' )">
+                            Event
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row schedule-container">
-        <div class="col-lg">
-            <ul class="calender">
-                {% for entry in site.data.schedules.current-schedule.meetings %}
-                <li class="meeting">
-                    <div class="row entry">
-                        <div class="cal-card">
-                            <div class="date text-center">
-                                <p>{{ site.data.schedules.months[entry.month] }}</p>
-                                <h3>{{ entry.day }}</h3>
-                            </div>
-                            <div class="content">
-                                <h5 class="topic">{{ entry.subject }}</h5>
-                                <p class="card-text">{{ entry.description }}</p>
-                                {% for tag in entry.tags %}
-                                    <p class="label {{ tag }}">{{ tag }}</p>
-                                {% endfor %}
+        <div class="col-lg-9">
+            <div class="schedule-container">
+                <ul class="calender">
+                    {% for entry in site.data.schedules.current-schedule.meetings %}
+                    <li class="meeting">
+                        <div class="row entry">
+                            <div class="cal-card">
+                                <div class="date text-center">
+                                    <p>{{ site.data.schedules.months[entry.month] }}</p>
+                                    <h3>{{ entry.day }}</h3>
+                                </div>
+                                <div class="content">
+                                    <h5 class="topic">{{ entry.subject }}</h5>
+                                    <p class="card-text">{{ entry.description }}</p>
+                                    {% for tag in entry.tags %}
+                                        <p class="label {{ tag }}">{{ tag }}</p>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
     <!-- END: Repeat structure -->
