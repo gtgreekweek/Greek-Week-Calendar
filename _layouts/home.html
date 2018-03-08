@@ -25,19 +25,29 @@ layout: master
                  data-children = ".item"
                  class         = "side-nav"
                  style         = "text-align:center">
-				<button class="button outdoor">
+				<button class       = "button outdoor"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'outdoor' )">
 			        Outdoor
 				</button>
-				<button class="button indoor">
+				<button class       = "button indoor"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'indoor' )">
 			        Indoor
 				</button>
-				<button class="button water">
+				<button class       = "button water"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'water' )">
 			        Water
 				</button>
-				<button class="button deadline">
+				<button class       = "button deadline"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'deadline' )">
 			        Deadline
 				</button>
-				<button class="button event">
+				<button class       = "button event"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'event' )">
 			        Event
 				</button>
 			</div>

@@ -59,19 +59,29 @@
                  data-children = ".item"
                  class         = "side-nav"
                  style         = "text-align:center">
-				<button class="button outdoor">
+				<button class       = "button outdoor"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'outdoor' )">
 			        Outdoor
 				</button>
-				<button class="button indoor">
+				<button class       = "button indoor"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'indoor' )">
 			        Indoor
 				</button>
-				<button class="button water">
+				<button class       = "button water"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'water' )">
 			        Water
 				</button>
-				<button class="button deadline">
+				<button class       = "button deadline"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'deadline' )">
 			        Deadline
 				</button>
-				<button class="button event">
+				<button class       = "button event"
+                        data-hidden = "false"
+                        onClick     = "filter_events( 'event' )">
 			        Event
 				</button>
 			</div>
@@ -233,9 +243,8 @@
 
   <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
   <script type="text/javascript" src="/js/open-facebook.js"></script>
-
-    <!-- Optional JavaScript -->
   <script type="text/javascript" src="/js/adjust-calendar-view.js"></script>
+  <script type="text/javascript" src="/js/filter-buttons.js"></script>
 
 </body>
 
