@@ -5,10 +5,12 @@ function filter_events( type )
     {
         $(".label." + type).parents('.cal-card').show();
         $(".button." + type).attr('data-hidden', 'false');
+        $(".button." + type).css('opacity', '1.0');
     }
     else
     {
         $(".label." + type).parents('.cal-card').hide();
         $(".button." + type).attr('data-hidden', 'true');
+        $(".button." + type).css('opacity', '0.5');
     }
 }
