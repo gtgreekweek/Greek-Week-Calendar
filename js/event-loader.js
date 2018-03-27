@@ -43,6 +43,7 @@ $(document).ready(() => {
             Mustache.parse(template);
             var rendered = Mustache.render(template, {events: events});
             $("#eventsList").html(rendered);
+            bindRulesEvents();
         })
     })
 })
