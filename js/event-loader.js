@@ -1,5 +1,7 @@
 var dataDocument = "https://docs.google.com/spreadsheets/d/16xMR7wsN4MetV1v1qKoGqIqv2ucDih2OdC6bB3Lwf88/edit?usp=sharing";
 
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 function getEvents(completion) {
     Tabletop.init(
         {
@@ -30,11 +32,17 @@ function Event(object) {
     this.description = object["Description"];
     this.hasRuleBookContent = object["Has Rule Book Content?"] == "Yes" ? true : false;
     var dateTimeString = object["Date"] + " " + object["Time"];
-    this.dateTime = new Date(dateTimeString);
+    var dateObject = new Date(dateTimeString);
+    this.month = months[dateObject.getMonth()];
+    this.date = dateObject.getDate();
 }
 
 $(document).ready(() => {
     getEvents((events) => {
-        console.log(events);
+        $.get("eventsTemplate.html", function(template) {
+            Mustache.parse(template);
+            var rendered = Mustache.render(template, {events: events});
+            $("#eventsList").html(rendered);
+        })
     })
 })
