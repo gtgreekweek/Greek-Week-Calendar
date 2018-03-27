@@ -37,8 +37,14 @@ function getRulesForEvent(name, completion) {
     });
 }
 
-$(document).ready(() => {
-    getRulesForEvent("Miscellaneous Points", (result) => {
-        // $(".schedule-container").append(result);
+function bindRulesEvents() {
+    $(".rulesButton").on("click", rulesClick);
+}
+
+function rulesClick(event) {
+    var button = $(this);
+    name = button.attr("event-name");
+    getRulesForEvent(name, (result) => {
+        $("#rulesModalBody").html(result);
     });
-})
+}
