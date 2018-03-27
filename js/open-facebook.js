@@ -1,6 +1,3 @@
----
----
-
 function openFacebook() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     var url = "{{ site.facebook_url }}";

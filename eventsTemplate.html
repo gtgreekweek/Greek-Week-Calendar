@@ -1,0 +1,21 @@
+{{ #events}}
+    <li class="meeting">
+        <div class="row entry">
+            <div class="cal-card">
+                <div class="date text-center">
+                    <p>{{month}}</p>
+                    <h3>{{date}}</h3>
+                </div>
+                <div class="content">
+                    <h5 class="topic">{{name}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">Location: {{location}}</p>
+                        {{ #tags }}
+                            <p class="label {{.}}">{{.}}</p>
+                        {{ /tags }}
+
+                </div>
+            </div>
+        </div>
+    </li>
+{{ /events}}
