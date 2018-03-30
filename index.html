@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light fixed-top">
+<nav class="navbar navbar-light">
     <div class="my-box">
         <a class="navbar-brand" href="http://localhost:4000">
             <img src="/images/home/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -34,61 +34,60 @@
         </div>
     </div>
 </nav>
-
-
-  <nav class="navbar second-nav fixed-top">
-    <div class="container">
-        <a class="navbar-brand">
-            Filter Events
-        </a>
-        <div class="nav justify-content-end">
-            <a id            = "expand-icon"
-               data-toggle   = "collapse"
-               href          = "#nav-collapse"
-               aria-expanded = "false"
-               aria-controls = "#nav-collapse">
-                <i class="material-icons">expand_more</i>
+<div class="fixed-top">
+    <nav class="navbar second-nav">
+        <div class="container">
+            <a class="navbar-brand">
+                Filter Events
             </a>
+            <div class="nav justify-content-end">
+                <a id            = "expand-icon"
+                   data-toggle   = "collapse"
+                   href          = "#nav-collapse"
+                   aria-expanded = "false"
+                   aria-controls = "#nav-collapse">
+                    <i class="material-icons">expand_more</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="second-nav-collapsible fixed-top">
+        <div class="collapse" id="nav-collapse" style="background-color:white;">
+            <div class="container">
+                <div id            = "mainAccordion"
+                     data-children = ".item"
+                     class         = "side-nav"
+                     style         = "text-align:center">
+                    <button class       = "button outdoor"
+                            data-hidden = "false"
+                            onClick     = "filter_events( 'outdoor' )">
+                        Outdoor
+                    </button>
+                    <button class       = "button indoor"
+                            data-hidden = "false"
+                            onClick     = "filter_events( 'indoor' )">
+                        Indoor
+                    </button>
+                    <button class       = "button water"
+                            data-hidden = "false"
+                            onClick     = "filter_events( 'water' )">
+                        Water
+                    </button>
+                    <button class       = "button deadline"
+                            data-hidden = "false"
+                            onClick     = "filter_events( 'deadline' )">
+                        Deadline
+                    </button>
+                    <button class       = "button event"
+                            data-hidden = "false"
+                            onClick     = "filter_events( 'event' )">
+                        Event
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<div class="second-nav-collapsible">
-    <div class="collapse" id="nav-collapse">
-        <div class="container">
-			<div id            = "mainAccordion"
-                 data-children = ".item"
-                 class         = "side-nav"
-                 style         = "text-align:center">
-				<button class       = "button outdoor"
-                        data-hidden = "false"
-                        onClick     = "filter_events( 'outdoor' )">
-			        Outdoor
-				</button>
-				<button class       = "button indoor"
-                        data-hidden = "false"
-                        onClick     = "filter_events( 'indoor' )">
-			        Indoor
-				</button>
-				<button class       = "button water"
-                        data-hidden = "false"
-                        onClick     = "filter_events( 'water' )">
-			        Water
-				</button>
-				<button class       = "button deadline"
-                        data-hidden = "false"
-                        onClick     = "filter_events( 'deadline' )">
-			        Deadline
-				</button>
-				<button class       = "button event"
-                        data-hidden = "false"
-                        onClick     = "filter_events( 'event' )">
-			        Event
-				</button>
-			</div>
-		</div>
-    </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-3 side-menu">

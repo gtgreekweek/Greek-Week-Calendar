@@ -1,3 +1,8 @@
+#holder {
+    left 0;
+    position: fixed;
+    top: 0;
+}
 
 .post-header h1 {
     word-wrap: break-word;
