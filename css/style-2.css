@@ -86,7 +86,7 @@ code {
 
 div.item {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #e3e3e3;
+    /* border-bottom: 1px solid #e3e3e3; */
 }
 
 div.item > a{
