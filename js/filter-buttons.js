@@ -4,20 +4,21 @@ function filter_events( type )
 
     if( is_hidden )
     {
-        $(".label." + type).parents('.cal-card').show();
-        $(".button." + type).attr('data-hidden', 'false');
-        $(".button." + type).css('opacity', '1.0');
-    }
-    else
-    {
-        // Unhides all other buttons first
+        // Shows all other cards
         $(".label").parents('.cal-card').show();
         $(".button").attr('data-hidden', 'false');
         $(".button").css('opacity', '1.0');
+    }
+    else
+    {
+        // Hides all other buttons first
+        $(".label").parents('.cal-card').hide();
+        $(".button").attr('data-hidden', 'false');
+        $(".button").css('opacity', '0.5');
 
-        // Hides just this type
-        $(".label." + type).parents('.cal-card').hide();
+        // Shows just this type
+        $(".label." + type).parents('.cal-card').show();
         $(".button." + type).attr('data-hidden', 'true');
-        $(".button." + type).css('opacity', '0.5');
+        $(".button." + type).css('opacity', '1.0');
     }
 }
