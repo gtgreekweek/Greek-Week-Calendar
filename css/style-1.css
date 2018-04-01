@@ -223,7 +223,7 @@ body .bg:nth-child(n+3) {
 }
 
 .outdoor {
-    background-color: #805031;
+    background-color: #198f35;
     color: #fff;
 }
 
@@ -233,7 +233,12 @@ body .bg:nth-child(n+3) {
 }
 
 .indoor {
-    background-color: #198f35;
+    background-color: #909090;
+    color: #fff;
+}
+
+.philanthropy {
+    background-color: #996edd;
     color: #fff;
 }
 
