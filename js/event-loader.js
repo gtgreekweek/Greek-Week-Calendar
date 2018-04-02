@@ -26,11 +26,12 @@ function parseObjectIntoEvents(eventsObject) {
 }
 
 function Event(object) {
-    this.name = object["Name"];
+    this.displayName = object["Display Name"];
+    this.rulesName = object["Rulebook Name"];
     this.location = object["Location"]
     this.tags =  object["Tags"].split(",");
     this.description = object["Description"];
-    this.hasRuleBookContent = object["Has Rule Book Content?"] == "Yes" ? true : false;
+    //this.hasRuleBookContent = object["Has Rule Book Content?"] == "Yes" ? true : false;
     var dateTimeString = object["Date"] + " " + object["Time"];
     var dateObject = new Date(dateTimeString);
     this.month = months[dateObject.getMonth()];
