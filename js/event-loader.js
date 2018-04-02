@@ -75,6 +75,10 @@ $(document).ready(() => {
     });
 })
 
+function renderEvents() {
+    renderEvents(false, undefined)
+}
+
 function renderEventsAndScrollToToday() {
   renderEvents(true, undefined)
 }
@@ -104,6 +108,8 @@ function renderEvents(scrollToToday, selectedFilter) {
   }).done( function(){
       if (scrollToToday) {
           $("html, body").animate({scrollTop:$('#next_event').offset().top - 50 }, 1000);
-      } 
+      } else {
+          window.scrollTo(0, 0);
+      }
   });
 }

@@ -1,14 +1,14 @@
 function filter_events( type )
 { 
   
-    // rerender the events
-    renderEventsWithFilter(type)
-    
     // update the buttons
     var is_hidden = $(".button." + type).attr('data-hidden') == "true";
 
     if( is_hidden )
     {
+        // rerender the events without a filter
+        renderEvents()
+      
         // Shows all other cards
         $(".label").parents('.cal-card').show();
         $(".button").attr('data-hidden', 'false');
@@ -16,6 +16,10 @@ function filter_events( type )
     }
     else
     {
+      
+        // rerender the events with a filter
+        renderEventsWithFilter(type)
+      
         // Hides all other buttons first
         $(".label").parents('.cal-card').hide();
         $(".button").attr('data-hidden', 'false');
