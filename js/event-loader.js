@@ -73,6 +73,7 @@ $(document).ready(() => {
             $("#eventsList").html(rendered);
             bindRulesEvents();
         }).done( function(){
+            $("#loading_duck").fadeOut();
             $("html, body").animate({scrollTop:$('#next_event').offset().top - 50 }, 1000);
         });
     });
