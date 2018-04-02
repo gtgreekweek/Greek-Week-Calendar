@@ -1,10 +1,15 @@
 {{ #events}}
     <li class="meeting">
         <div class="row entry">
-            <div class="cal-card">
+            <div class="cal-card"
+                 {{ #next_event }}
+                    id="next_event"
+                 {{ /next_event }}
+                >
                 <div class="date text-center">
                     <p>{{month}}</p>
                     <h3>{{date}}</h3>
+                    <p class="card-text">{{time}}</p>
                 </div>
                 <div class="content">
                     <button type="button" class="rulesButton btn btn-light float-right" event-name="{{rulesName}}" data-toggle="modal" data-target="#rulesModal">Rules</button>
