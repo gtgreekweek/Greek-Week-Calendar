@@ -1,5 +1,10 @@
 function filter_events( type )
-{
+{ 
+  
+    // rerender the events
+    renderEventsWithFilter(type)
+    
+    // update the buttons
     var is_hidden = $(".button." + type).attr('data-hidden') == "true";
 
     if( is_hidden )

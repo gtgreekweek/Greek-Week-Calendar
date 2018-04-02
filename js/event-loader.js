@@ -4,6 +4,8 @@ var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "
 
 var next_event_found = false;
 
+var cached_events = []
+
 function getEvents(completion) {
     Tabletop.init(
         {
@@ -12,6 +14,7 @@ function getEvents(completion) {
             callback: (data, tabletop) => {
                 events = parseObjectIntoEvents(data["Events"].elements)
                 completion(events)
+                cached_events = events
             },
         })
 
@@ -67,13 +70,40 @@ function Event(object) {
 
 $(document).ready(() => {
     getEvents((events) => {
-        $.get("eventsTemplate.html", function(template) {
-            Mustache.parse(template);
-            var rendered = Mustache.render(template, {events: events});
-            $("#eventsList").html(rendered);
-            bindRulesEvents();
-        }).done( function(){
-            $("html, body").animate({scrollTop:$('#next_event').offset().top - 50 }, 1000);
-        });
+        cached_events = events
+        renderEventsAndScrollToToday()
     });
 })
+
+function renderEventsAndScrollToToday() {
+  renderEvents(true, undefined)
+}
+
+function renderEventsWithFilter(filter) {
+  renderEvents(false, filter)
+}
+
+function renderEvents(scrollToToday, selectedFilter) {
+  filtered_events = cached_events.filter(function(event) {
+      if (selectedFilter != undefined) {
+          if (event.tags != null) {
+              return event.tags.includes(selectedFilter)
+          } else {
+              return false
+          }
+      } else {
+          return true
+      }
+  })
+  
+  $.get("eventsTemplate.html", function(template) {
+      Mustache.parse(template);
+      var rendered = Mustache.render(template, {events: filtered_events});
+      $("#eventsList").html(rendered);
+      bindRulesEvents();
+  }).done( function(){
+      if (scrollToToday) {
+          $("html, body").animate({scrollTop:$('#next_event').offset().top - 50 }, 1000);
+      } 
+  });
+}
