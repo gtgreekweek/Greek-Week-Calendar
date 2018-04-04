@@ -4,6 +4,8 @@ function getRulesForEvent(name, completion) {
     $.get(rulebookUrl, (rulebookHtml) => {
         var rulebook = $(rulebookHtml);
 
+        // use the Table of Contents as an index
+        // find the line corresponding with the given event, and then take the `id` of the linked section header
         var links = rulebook.find("a");
         var found = null;
         var next = null;
@@ -24,14 +26,16 @@ function getRulesForEvent(name, completion) {
         }
 
         var eventId = $(found).attr("href").replace(".", "\\.");
-        var nextId = $(next).attr("href");
+        var nextId = $(next).attr("href").replace(".", "\\.");
 
-        var currentElement = rulebook.find(eventId);
+        // take all of the elements between the event title and the next event title
+        var currentEventTitle = rulebook.find(eventId);
+        var nextEventTitle = rulebook.find(nextId)
         var result = $("<div></div>");
 
-        var nextElements = $(currentElement).nextUntil("h1");
-        result.append(currentElement);
-        result.append(nextElements);
+        var ruleBookContent = $(currentEventTitle).nextUntil(nextEventTitle);
+        result.append(currentEventTitle);
+        result.append(ruleBookContent);
 
         completion(result);
     });
