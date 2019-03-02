@@ -242,6 +242,26 @@ body .bg:nth-child(n+3) {
     color: #fff;
 }
 
+.athletic {
+    background-color: #e52d2d;
+    color: #fff;
+}
+
+.creative {
+    background-color: #e58f0d;
+    color: #fff;
+}
+
+.skill {
+    background-color: #d6cb08;
+    color: #fff;
+}
+
+.participation {
+    background-color: #08d6d2;
+    color: #fff;
+}
+
 .label span {
     border: 2px solid rgba(0,0,0,0.8);
     border-color: #e85d00;
