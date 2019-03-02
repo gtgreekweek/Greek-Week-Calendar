@@ -1,33 +1,32 @@
-var dataDocument = "https://docs.google.com/spreadsheets/d/1gY43rHIv20a7HCkek247fcaoRYumECFnClScyNPf6Bs/edit?usp=sharing";
-
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 var next_event_found = false;
 
 var cached_events = []
 
+var config = {
+  apiKey: "AIzaSyCjVbP6rCdOGEdL4yT9L6olvfjjazaLLiU",
+  authDomain: "greek-week-28065.firebaseapp.com",
+  databaseURL: "https://greek-week-28065.firebaseio.com",
+  projectId: "greek-week-28065",
+  storageBucket: "greek-week-28065.appspot.com",
+  messagingSenderId: "1060345771072"
+};
+firebase.initializeApp(config);
+
 function getEvents(completion) {
-    Tabletop.init(
-        {
-            key: dataDocument,
-            simpleSheet: false,
-            callback: (data, tabletop) => {
-                events = parseObjectIntoEvents(data["Events"].elements)
-                completion(events)
-                cached_events = events
-            },
-        })
+  var database = firebase.database();
+  database.ref("calendar").once("value").then((snapshot) => {
+    events = []
+    snapshot.forEach(childSnapshot => {
+      child = childSnapshot.val();
+      event = new Event(child)
+      events.push(event)
+    })
 
-}
-
-function parseObjectIntoEvents(eventsObject) {
-    var events = [];
-
-    for (var i = 0; i < eventsObject.length; i++) {
-        events.push(new Event(eventsObject[i]));
-    }
-
-    return events;
+    completion(events)
+    cached_events = events
+  })
 }
 
 function Event(object) {
