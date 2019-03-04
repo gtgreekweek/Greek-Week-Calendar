@@ -1,4 +1,5 @@
-var rulebookUrl = "https://docs.google.com/document/u/1/d/e/2PACX-1vQNXM7hfNMWKaootLQF0pfkovAcrUfck4Iq0AOIFCsOEhawqfy5BFIU1pEjYKHNUmIrPdXZqJfEFwly/pub#h.36gmfdhvfqic";
+//var rulebookUrl = "https://docs.google.com/document/u/1/d/e/2PACX-1vQNXM7hfNMWKaootLQF0pfkovAcrUfck4Iq0AOIFCsOEhawqfy5BFIU1pEjYKHNUmIrPdXZqJfEFwly/pub#h.36gmfdhvfqic";
+var rulebookUrl = "https://docs.google.com/document/u/1/d/e/2PACX-1vRAKLz-JO2h6NRFid9_6iXCSOx1eWqk0Z44rTASgJ-YU6JsH674kcnvgQ32Ltz1HGJQi-QlSckkRVPf/pub";
 
 function getRulesForEvent(name, completion) {
     $.get(rulebookUrl, (rulebookHtml) => {
